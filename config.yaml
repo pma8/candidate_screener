@@ -1,0 +1,43 @@
+# Candidate Screener Configuration
+
+# Claude model for analysis
+model: "claude-sonnet-4-5-20250929"
+
+# Maximum number of candidates to process in parallel
+batch_size: 5
+
+# Web search settings
+search:
+  # Number of search results to fetch per candidate
+  max_results: 5
+
+# Scoring weights (must sum to 1.0)
+scoring:
+  weights:
+    skills_match: 0.35
+    experience_relevance: 0.25
+    experience_level: 0.20
+    education: 0.10
+    overall_impression: 0.10
+
+# Fake detection thresholds
+fake_detection:
+  # Score below which a candidate is flagged as likely fake (0-100)
+  flag_threshold: 40
+
+# Report settings
+report:
+  # Number of top candidates to show detailed breakdown for
+  top_n: 20
+
+# CSV column mapping overrides (optional)
+# Uncomment and adjust if your CSV has non-standard column names
+# column_mapping:
+#   name: "Candidate Name"
+#   email: "Email Address"
+#   linkedin: "LinkedIn URL"
+#   phone: "Phone"
+#   current_title: "Headline"
+#   location: "Location"
+#   source: "Source"
+#   stage: "Stage"
